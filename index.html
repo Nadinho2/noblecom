@@ -22,11 +22,36 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--graphite);
+    background:#E3E7E6;
     color:var(--bone);
     font-family:'Inter',sans-serif;
     line-height:1.6;
     overflow-x:hidden;
+  }
+
+  /* ===== Double-Sided Desktop Container ===== */
+  .site-container{
+    max-width:1080px;
+    margin:0 auto;
+    position:relative;
+    background:var(--graphite);
+    border-left:1px solid var(--slate-line);
+    border-right:1px solid var(--slate-line);
+    padding-right:44px;
+    box-shadow:0 0 60px rgba(0,0,0,0.03);
+  }
+  @media(max-width:1120px){
+    body{background:var(--graphite);}
+    .site-container{
+      border-left:none;
+      border-right:none;
+      padding-right:24px;
+    }
+  }
+  @media(max-width:760px){
+    .site-container{
+      padding-right:16px;
+    }
   }
   h1,h2,h3,.mono{
     font-family:'JetBrains Mono',monospace;
@@ -64,13 +89,23 @@
   /* ===== nav ===== */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(241,243,242,0.88);
+    background:#E3E7E6;
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--slate-line);
   }
   nav.wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 32px;
     display:flex;align-items:center;justify-content:space-between;
     height:76px;
+    background:var(--graphite);
+    border-left:1px solid var(--slate-line);
+    border-right:1px solid var(--slate-line);
+  }
+  @media(max-width:1120px){
+    header{background:rgba(241,243,242,0.92);}
+    nav.wrap{border-left:none;border-right:none;}
   }
   .logo{
     font-family:'JetBrains Mono',monospace;
@@ -113,8 +148,14 @@
   /* ===== hero ===== */
   .hero{
     position:relative;
-    padding:120px 0 100px;
+    padding:100px 0 80px;
     overflow:hidden;
+  }
+  .hero-inner{
+    margin-left:64px;
+  }
+  @media(max-width:760px){
+    .hero-inner{margin-left:36px;}
   }
   .eyebrow{
     font-family:'JetBrains Mono',monospace;
@@ -372,6 +413,27 @@
   .quote-day b{font-family:'JetBrains Mono',monospace;color:var(--bone);margin-right:8px;}
   .quote-day span{color:var(--bone-dim);}
   .ai-questions{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+  .pkg-cta{
+    margin-top:22px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:11px 20px;
+    background:var(--signal);
+    color:#F8F6F1;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    font-weight:600;
+    border-radius:4px;
+    transition:transform .15s, background .15s;
+    text-decoration:none;
+  }
+  .pkg-cta:hover{
+    background:#25664d;
+    transform:translateY(-1px);
+    color:#F8F6F1;
+  }
+
   .ai-q{
     background:var(--graphite);
     border:1px solid var(--slate-line);
@@ -490,12 +552,23 @@
 
   footer{
     border-top:1px solid var(--slate-line);
-    padding:40px 0;
-    margin-top:40px;
+    background:#E3E7E6;
+    padding:0;
+    margin-top:0;
   }
   .footer-row{
+    max-width:1080px;
+    margin:0 auto;
+    background:var(--graphite);
+    padding:40px 32px;
+    border-left:1px solid var(--slate-line);
+    border-right:1px solid var(--slate-line);
     display:flex;justify-content:space-between;align-items:center;
     flex-wrap:wrap;gap:20px;
+  }
+  @media(max-width:1120px){
+    footer{background:var(--graphite);padding:40px 0;}
+    .footer-row{border-left:none;border-right:none;padding:0 32px;}
   }
   .footer-row .mono{font-size:12px;color:var(--bone-dim);}
   .social-links{display:flex;gap:20px;font-size:13px;color:var(--bone-dim);}
@@ -520,21 +593,21 @@
       <a href="#cases">Case Studies</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="https://wa.me/61401642067" class="nav-cta">Book a Call</a>
+    <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20book%20a%20call%20to%20discuss%20automating%20our%20business%20workflows." class="nav-cta">Book a Call</a>
   </nav>
 </header>
 
-<div style="position:relative;">
+<div class="site-container">
 <div class="trace-col"></div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="wrap">
+  <div class="hero-inner">
     <div class="eyebrow">Noblecom — Business Process Optimisation</div>
     <h1>Automate the work<br>that's slowing your<br><span class="accent">business down.</span></h1>
     <p class="lead">We help Australian businesses automate repetitive administration, customer follow-up, sales processes and internal workflows, so your team can focus on work that actually makes money.</p>
     <div class="btn-row">
-      <a href="https://wa.me/61401642067?text=Hi%2C%20I%27d%20like%20to%20book%20a%20Free%20Automation%20Audit." class="btn btn-primary">Book a Free Automation Audit →</a>
+      <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20book%20a%20Free%20Automation%20Audit%20for%20my%20business." class="btn btn-primary">Book a Free Automation Audit →</a>
       <a href="#packages" class="btn btn-ghost">See the Packages</a>
     </div>
     <div class="dual-path">
@@ -625,6 +698,7 @@
           <li>Automatic follow-up</li>
           <li>Lost-lead recovery</li>
         </ul>
+        <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20enquire%20about%20Package%2001%3A%20Lead%20Conversion%20System." class="pkg-cta">Enquire About Package 01 &rarr;</a>
       </div>
     </div>
 
@@ -641,6 +715,7 @@
         </div>
         <p style="margin-bottom:0;">The salesperson only intervenes when necessary.</p>
         <div class="pkg-pitch">"Stop losing jobs because nobody followed up."</div>
+        <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20enquire%20about%20Package%2002%3A%20Quote%20Follow-Up%20System." class="pkg-cta">Enquire About Package 02 &rarr;</a>
       </div>
     </div>
 
@@ -659,31 +734,33 @@
           <li>Spreadsheets</li>
           <li>Reporting</li>
         </ul>
+        <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20enquire%20about%20Package%2003%3A%20Admin%20Automation%20System." class="pkg-cta">Enquire About Package 03 &rarr;</a>
       </div>
     </div>
 
     <div class="pkg-card">
-      <div class="pkg-head"><span class="pkg-num">Package 05</span><h3>Invoice & Accounts Automation</h3></div>
-      <p class="pkg-sub">A very obvious financial benefit — get paid faster with less chasing.</p>
+      <div class="pkg-head"><span class="pkg-num">Package 04</span><h3>Invoice & Accounts Automation</h3></div>
+      <p class="pkg-sub">A very obvious financial benefit - get paid faster with less chasing.</p>
       <div class="pkg-body">
         <div class="pipeline" style="margin-bottom:4px;">
           <div class="pl-step"><span>Job Completed</span></div>
-          <div class="pl-arrow">→</div>
+          <div class="pl-arrow"> </div>
           <div class="pl-step"><span>Documentation</span></div>
-          <div class="pl-arrow">→</div>
+          <div class="pl-arrow"> </div>
           <div class="pl-step"><span>Invoice</span></div>
-          <div class="pl-arrow">→</div>
+          <div class="pl-arrow"> </div>
           <div class="pl-step"><span>Reminder</span></div>
-          <div class="pl-arrow">→</div>
+          <div class="pl-arrow"> </div>
           <div class="pl-step"><span>Payment</span></div>
-          <div class="pl-arrow">→</div>
+          <div class="pl-arrow"> </div>
           <div class="pl-step signal-step"><span>Reconciliation Notification</span></div>
         </div>
+        <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20enquire%20about%20Package%2004%3A%20Invoice%20%26%20Accounts%20Automation." class="pkg-cta">Enquire About Package 04 &rarr;</a>
       </div>
     </div>
 
     <div class="pkg-card">
-      <div class="pkg-head"><span class="pkg-num">Package 06</span><h3>AI Business Assistant</h3></div>
+      <div class="pkg-head"><span class="pkg-num">Package 05</span><h3>AI Business Assistant</h3></div>
       <p class="pkg-sub">For owners and managers. Ask your business questions, get straight answers.</p>
       <div class="pkg-body">
         <div class="ai-questions">
@@ -694,6 +771,7 @@
           <div class="ai-q">"Which salesperson is converting the most leads?"</div>
         </div>
         <p style="margin-bottom:0;">This is what moves Noblecom from automation provider to business intelligence provider.</p>
+        <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20enquire%20about%20Package%2005%3A%20AI%20Business%20Assistant." class="pkg-cta">Enquire About Package 05 &rarr;</a>
       </div>
     </div>
 
@@ -805,10 +883,10 @@
     <div>
       <h3>Show us how your business works</h3>
       <p>We'll identify the repetitive work, calculate what it's costing you, and show you the financial result of automating it. Fill in a few details below, or reach us directly by phone, email, or WhatsApp.</p>
-      <a href="https://wa.me/61401642067" class="whatsapp-btn">Message on WhatsApp →</a>
+      <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%27d%20like%20to%20ask%20a%20few%20questions%20about%20your%20automation%20systems." class="whatsapp-btn">Message on WhatsApp →</a>
       <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
         <a href="mailto:pattischoice@gmail.com" style="font-size:14px;color:var(--bone-dim);">pattischoice@gmail.com</a>
-        <a href="tel:+61401642067" style="font-size:14px;color:var(--bone-dim);">+61 401 642 067</a>
+        <a href="tel:+61431754450" style="font-size:14px;color:var(--bone-dim);">+61 431 754 450</a>
       </div>
     </div>
     <div>
@@ -826,8 +904,8 @@
           <option>Package 01 — Lead Conversion System</option>
           <option>Package 02 — Quote Follow-Up System</option>
           <option>Package 03 — Admin Automation System</option>
-          <option>Package 05 — Invoice & Accounts Automation</option>
-          <option>Package 06 — AI Business Assistant</option>
+          <option>Package 04 — Invoice & Accounts Automation</option>
+          <option>Package 05 — AI Business Assistant</option>
           <option>Not sure — send me an audit</option>
         </select>
       </div>
@@ -848,8 +926,8 @@
     <div class="mono">© 2026 Noblecom</div>
     <div class="social-links">
       <a href="mailto:pattischoice@gmail.com">pattischoice@gmail.com</a>
-      <a href="tel:+61401642067">+61 401 642 067</a>
-      <a href="https://wa.me/61401642067">WhatsApp</a>
+      <a href="tel:+61431754450">+61 431 754 450</a>
+      <a href="https://wa.me/61431754450?text=Hi%20Noblecom%2C%20I%20was%20browsing%20your%20website%20and%20would%20like%20to%20connect.">WhatsApp</a>
     </div>
   </div>
 </footer>
@@ -868,7 +946,7 @@
     if (message) lines.push('Message: ' + message);
 
     var text = encodeURIComponent(lines.join('\n'));
-    window.open('https://wa.me/61401642067?text=' + text, '_blank');
+    window.open('https://wa.me/61431754450?text=' + text, '_blank');
   });
 </script>
 
